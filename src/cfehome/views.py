@@ -3,11 +3,11 @@ from django.shortcuts import render
 from visits.models import PageVisit
 
 def home_page_view(request):
-    queryset = PageVisit.objects.all()
+    qs = PageVisit.objects.all()
 
     context = {
-        'queryset': queryset,
-        'page_visits_count': queryset.count(),
+        'qs': qs,
+        'page_visits_count': qs.count(),
     }
 
     PageVisit.objects.create()
